@@ -5,10 +5,10 @@ class Pack < Formula
 
   if OS.mac?
     url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-x86_64-apple-darwin.tar.gz"
-    sha256 "0b8e3c53d1b1ce5a5a6bc7aee7a60f37bcf5d2c623d505c7eb9f4f872a5f345f" # mac
+    sha256 "011349f1754cc4116fe2fce16638d688fd93e4ea55de5267177b0ad60cf84033" # mac
   elsif OS.linux?
     url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "ecdd18495cddb3e671016e7df41766715edbc8eaa8a2d30c3446cd70898e19ee" # linux
+    sha256 "bbf4f81fb0ac87ca8761a71c9b55277cc561bbe7ae68f980252281e006f15a5d" # linux
   end
 
   conflicts_with "pack"
