@@ -4,11 +4,21 @@ class Pack < Formula
   homepage "https://github.com/maralla/pack"
 
   if OS.mac?
-    url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-x86_64-apple-darwin.tar.gz"
-    sha256 "011349f1754cc4116fe2fce16638d688fd93e4ea55de5267177b0ad60cf84033" # mac
+    if Hardware::CPU.arm?
+      url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-aarch64-apple-darwin.tar.gz"
+      sha256 "" # mac-aarch64
+    else
+      url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-x86_64-apple-darwin.tar.gz"
+      sha256 "011349f1754cc4116fe2fce16638d688fd93e4ea55de5267177b0ad60cf84033" # mac-x86
+    end
   elsif OS.linux?
-    url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "bbf4f81fb0ac87ca8761a71c9b55277cc561bbe7ae68f980252281e006f15a5d" # linux
+    if Hardware::CPU.arm?
+      url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "" # linux-aarch64
+    else
+      url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "bbf4f81fb0ac87ca8761a71c9b55277cc561bbe7ae68f980252281e006f15a5d" # linux-x86
+    end
   end
 
   conflicts_with "pack"
