@@ -1,23 +1,23 @@
 class Pack < Formula
-  version 'v0.2.13'
+  version 'v0.2.14'
   desc "Package manager for vim8."
   homepage "https://github.com/maralla/pack"
 
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "834a2674995c3d366b404cc3f09d1824bcf2582815dced1dbce0e51bae1d04a5" # mac-aarch64
+      sha256 "4978979fba28e5ef5fcecede7f6e9a53d5dd5096388a3daee6e8107d52bd6971" # mac-aarch64
     else
       url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "7072106a8e8aaf865f2dd1c7af73c0d7dcd77c0df64662e0deb24bc2ce7f303b" # mac-x86
+      sha256 "fb82c99fd45fea944127673fe17d0adcebec1a1e32d114bed40790c9f55c3af4" # mac-x86
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "a299cc9d8404587af4558dccfed48012352a83f60e794ad51a7627cc891417a7" # linux-aarch64
+      sha256 "2c80642992454ce92f98dc5695a6cc0dad2a911644e2f66e6e66e4f7dbdc6245" # linux-aarch64
     else
       url "https://github.com/maralla/pack/releases/download/#{version}/pack-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "85a6392e61bc36a2721200e2a7685628db7737bf68a2a2141c745df5b3880936" # linux-x86
+      sha256 "4791e88c52cafccb2e69285d52fb0ae19000c32cdac879526fe368d79c5b20d4" # linux-x86
     end
   end
 
